@@ -1,0 +1,12 @@
+﻿@page
+@model SessionFinalProject.Pages.CreateAccountModel
+@{
+}
+
+<form method="post">
+
+    <input name="password" placeholder="New Password" />
+    <input name="email" value=@Model.email hidden />
+    <button type="submit" >Submit</button>
+
+</form>

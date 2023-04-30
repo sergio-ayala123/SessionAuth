@@ -1,0 +1,33 @@
+﻿@page
+@model SessionFinalProject.Pages.SessionsModel
+@{
+}
+
+@if (Model.isAdmin)
+{
+    
+<table style="display:flex; justify-content:center; margin:4em">
+        <tr style="">
+            <td>Session Id</td>
+            <td>Email</td>
+            <td>Expires On</td>
+
+        </tr>
+@foreach(var item in Model.activeSessions)
+{
+        <tr>
+            <td>@item.SessionId.Substring(item.SessionId.Length-4)</td>
+            <td>@item.Email</td>
+            <td>@item.ExpiresOn</td>
+
+            <td> <form method="post" style="">
+                <input type="hidden" name = "sessionId" value=@item.SessionId />
+                <button asp-page-handler="DeleteSession" >Delete</button>
+                </form> </td>
+        </tr>
+}
+    </table>
+}
+else {
+    <h1>You not admin</h1>
+}

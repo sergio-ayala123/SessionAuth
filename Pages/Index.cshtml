@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if(Model.loggedInUser == "")
+{
+    <h1>You are not logged in </h1>
+}
+else
+{
+    <h1>Logged in as: @Model.loggedInUser</h1>
+}
+
